@@ -1,5 +1,5 @@
 package ua.lviv.iot.algo.part1.lab1;
-
+//
 public class Main {
     public static void main(String[] args) {
         PreciousStone stone1 = new PreciousStone("sapphire", 1, "blue", 3, 1000);
