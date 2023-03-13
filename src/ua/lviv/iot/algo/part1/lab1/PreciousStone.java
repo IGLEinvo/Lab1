@@ -4,6 +4,7 @@ package ua.lviv.iot.algo.part1.lab1;
 import lombok.*;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
 @ToString
@@ -14,19 +15,6 @@ public class PreciousStone {
     private float clarity;
     private float pricePerCarat;
     private static PreciousStone instance;
-
-    public PreciousStone(String name, float carat, String color, float clarity, float pricePerCarat) {
-        this.name = name;
-        this.carat = carat;
-        this.color = color;
-        this.clarity = clarity;
-        this.pricePerCarat = pricePerCarat;
-    }
-    @Override
-    public String toString() {
-        return "Name: " + this.name + ", Carat: " + this.carat + ", Color: " + this.color +
-                ", Clarity: " + this.clarity + ", Price per carat: " + this.pricePerCarat;
-    }
 
     public float getTotalPrice(){
         return pricePerCarat * carat;
