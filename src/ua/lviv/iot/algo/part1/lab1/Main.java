@@ -1,5 +1,4 @@
 package ua.lviv.iot.algo.part1.lab1;
-//
 public class Main {
     public static void main(String[] args) {
         PreciousStone[] stones ={
