@@ -1,32 +1,37 @@
 package ua.lviv.iot.algo.part1.lab1;
+
 import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Setter
 @Getter
-@ToString
-public class PreciousStone {
-    private String name;
+@Setter
+@ToString(callSuper=true)
+public class PreciousStone extends Stone {
     private float carat;
-    private String color;
     private float clarity;
     private float pricePerCarat;
-    private static PreciousStone instance;
 
-    public float getTotalPrice(){
+    public PreciousStone(String name, String color, double weight, double cost ,float carat, float clarity, float pricePerCarat) {
+        super(name, color, weight, cost);
+        this.carat = carat;
+        this.clarity = clarity;
+        this.pricePerCarat = pricePerCarat;
+    }
+
+    public float getTotalPrice() {
         return pricePerCarat * carat;
     }
-    public void increaseClarity(){
+
+    public void increaseClarity() {
         clarity++;
     }
-    public void increasePrice(double percentage){
-        pricePerCarat *=(1 + percentage/100);
+
+    public void increasePrice(double percentage) {
+        pricePerCarat *= (1 + percentage / 100);
     }
-    public static PreciousStone getInstance() {
-        if (instance == null) {
-            instance = new PreciousStone("sapphire", 1, "blue", 3, 1000);
-        }
-        return instance;
+
+    public float getFullPrice() {
+        return getTotalPrice();
     }
 }
