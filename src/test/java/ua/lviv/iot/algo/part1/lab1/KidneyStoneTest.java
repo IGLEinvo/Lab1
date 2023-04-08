@@ -35,5 +35,43 @@ class KidneyStoneTest {
         assertEquals(expected, kidneyStone.getFullPrice(), 0.01);
     }
 
+    @Test
+    public void testNoArgsConstructor() {
+        KidneyStone stone = new KidneyStone();
+        assertNotNull(stone);
+    }
+
+    @Test
+    public void testAllArgsConstructor() {
+        KidneyStone stone = new KidneyStone("stone1", "white", 1.5, 10.0, true);
+        assertNotNull(stone);
+        assertEquals("stone1", stone.getName());
+        assertEquals("white", stone.getColor());
+        assertEquals(1.5, stone.getWeight(), 0.01);
+        assertEquals(10.0, stone.getCost(), 0.01);
+        assertTrue(stone.isState());
+    }
+
+    @Test
+    public void testSettersAndGetters() {
+        KidneyStone stone = new KidneyStone();
+        stone.setName("stone2");
+        stone.setColor("black");
+        stone.setWeight(2.0);
+        stone.setCost(20.0);
+        stone.setState(false);
+        assertEquals("stone2", stone.getName());
+        assertEquals("black", stone.getColor());
+        assertEquals(2.0, stone.getWeight(), 0.01);
+        assertEquals(20.0, stone.getCost(), 0.01);
+        assertFalse(stone.isState());
+    }
+
+    @Test
+    public void testToString() {
+        KidneyStone stone = new KidneyStone("stone1", "white", 1.5, 10.0, true);
+        String expectedString = "KidneyStone(super=Stone(name=stone1, color=white, weight=1.5, cost=10.0), state=true)";
+        assertEquals(expectedString, stone.toString());
+    }
 
 }
