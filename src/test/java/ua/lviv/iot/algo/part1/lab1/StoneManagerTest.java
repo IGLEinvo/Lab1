@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class StoneManagerTest {
+public class
+StoneManagerTest {
 
     private StoneManager manager;
 
@@ -20,6 +21,7 @@ public class StoneManagerTest {
         manager.addStone(new Minerals("rock salt", "colorless", 100, 1, "not ores"));
         manager.addStone(new KidneyStone("cystyn stone", "orange", 0.01, 0, true));
         manager.addStone(new KidneyStone("uric stone", "grey", 0.1, 0, false));
+        manager.addStone(new PreciousStone("kamin", "grey", 0.3, 500, 0 , 3, 1000));
     }
 
     @Test
@@ -27,9 +29,10 @@ public class StoneManagerTest {
         double weightGreaterThan = 0.4;
         List<Stone> foundStones = manager.findAllWithWeightGreaterThan(weightGreaterThan);
         assertEquals(3, foundStones.size());
-        assertFalse(foundStones.contains(new PreciousStone("sapphire", "blue", 0.5, 1000, 1, 3, 1000)));
-        assertFalse(foundStones.contains(new ArtificialPreciousStone("Lab1", 0.5f, 500)));
-        assertFalse(foundStones.contains(new ArtificialPreciousStone("Lab2", 1, 1000)));
+
+        for (var stone : foundStones) {
+            assertTrue(stone.getWeight() > weightGreaterThan);
+        }
     }
 
     @Test
@@ -37,9 +40,9 @@ public class StoneManagerTest {
         double costGreaterThan = 500;
         List<Stone> foundStones = manager.findAllWithCostGreaterThan(costGreaterThan);
         assertEquals(2, foundStones.size());
-        assertFalse(foundStones.contains(new PreciousStone("sapphire", "blue", 0.5, 1000, 1, 3, 1000)));
-        assertFalse(foundStones.contains(new PreciousStone("diamond", "colorless", 0.2, 2000, 2, 4, 2000)));
-        assertFalse(foundStones.contains(new ArtificialPreciousStone("Lab2", 1, 1000)));
+        for (var stone : foundStones) {
+            assertTrue(stone.getCost() > costGreaterThan);
+        }
     }
 }
 

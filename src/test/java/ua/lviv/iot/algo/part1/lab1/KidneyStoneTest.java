@@ -6,21 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class KidneyStoneTest {
     @Test
-    public void testKidneyStoneConstructor() {
-        KidneyStone kidneyStone = new KidneyStone("Calcium Oxalate", "brown", 2.5, 50.0, true);
-        assertEquals("Calcium Oxalate", kidneyStone.getName());
-        assertEquals("brown", kidneyStone.getColor());
-        assertEquals(2.5, kidneyStone.getWeight(), 0.01);
-        assertEquals(50.0, kidneyStone.getCost(), 0.01);
-        assertTrue(kidneyStone.isState());
-    }
-    @Test
-    public void testKidneyStoneToString() {
-        KidneyStone kidneyStone = new KidneyStone("Calcium Oxalate", "brown", 2.5, 50.0, true);
-        String expected = "KidneyStone(super=Stone(name=Calcium Oxalate, color=brown, weight=2.5, cost=50.0), state=true)";
-        assertEquals(expected, kidneyStone.toString());
-    }
-    @Test
     public void testKidneyStoneIsState() {
         KidneyStone kidneyStone1 = new KidneyStone("Calcium Oxalate", "brown", 2.5, 50.0, true);
         assertTrue(kidneyStone1.isState());
@@ -73,5 +58,19 @@ class KidneyStoneTest {
         String expectedString = "KidneyStone(super=Stone(name=stone1, color=white, weight=1.5, cost=10.0), state=true)";
         assertEquals(expectedString, stone.toString());
     }
-
+    @Test
+    public void testKidneyStoneConstructor() {
+        KidneyStone kidneyStone = new KidneyStone("Calcium Oxalate", "brown", 2.5, 50.0, true);
+        assertEquals("Calcium Oxalate", kidneyStone.getName());
+        assertEquals("brown", kidneyStone.getColor());
+        assertEquals(2.5, kidneyStone.getWeight(), 0.01);
+        assertEquals(50.0, kidneyStone.getCost(), 0.01);
+        assertTrue(kidneyStone.isState());
+    }
+    @Test
+    public void testKidneyStoneToString() {
+        KidneyStone kidneyStone = new KidneyStone("Calcium Oxalate", "brown", 2.5, 50.0, true);
+        String expected = "KidneyStone(super=Stone(name=Calcium Oxalate, color=brown, weight=2.5, cost=50.0), state=true)";
+        assertEquals(expected, kidneyStone.toString());
+    }
 }

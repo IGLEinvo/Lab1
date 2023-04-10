@@ -41,7 +41,6 @@
             <version>3.1.2</version>
         </dependency>
 
-        <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
         <dependency>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs</artifactId>
@@ -129,7 +128,6 @@
                 <reportSets>
                     <reportSet>
                         <reports>
-                            <!-- select non-aggregate reports -->
                             <report>report</report>
                         </reports>
                     </reportSet>

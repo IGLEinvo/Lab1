@@ -16,7 +16,8 @@ public class ArtificialPreciousStone extends Stone {
     private float weightInGrams;
     private float pricePerGram;
 
-    public ArtificialPreciousStone(String name, String color, double weight, double cost , String labName, float weightInGrams, float pricePerGram) {
+    public ArtificialPreciousStone(String name, String color, double weight, double cost , String labName,
+                                   float weightInGrams, float pricePerGram) {
         super(name, color, weight, cost);
         this.labName = labName;
         this.weightInGrams = weightInGrams;
