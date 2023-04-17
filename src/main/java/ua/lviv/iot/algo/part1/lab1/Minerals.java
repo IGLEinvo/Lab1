@@ -18,4 +18,12 @@ public class Minerals extends Stone {
     public float getFullPrice() {
         return 0;
     }
+    @Override
+    public String getHeaders(){
+        return super.getHeaders() + ", type";
+    }
+    @Override
+    public String toCSV(){
+        return super.toCSV() + "," + type;
+    }
 }

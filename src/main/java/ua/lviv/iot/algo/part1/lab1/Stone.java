@@ -13,4 +13,13 @@ public abstract class Stone {
     private double weight;
     private double cost;
     public abstract float getFullPrice();
+
+    public String getHeaders() {
+        return "name, color, weight, cost";
+    }
+
+    public String toCSV() {
+        return name + ',' + color + ',' + weight + ',' + cost;
+    }
 }
+

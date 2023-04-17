@@ -18,4 +18,13 @@ public class KidneyStone extends Stone {
     public float getFullPrice() {
         return 0;
     }
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + ", state";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + ',' + state;
+    }
 }

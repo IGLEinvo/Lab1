@@ -27,4 +27,13 @@ public class ArtificialPreciousStone extends Stone {
     public float getFullPrice() {
         return weightInGrams * pricePerGram;
     }
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + ", labName, weightInGrams, pricePerGram";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + ',' + labName + ',' + weightInGrams + ',' + pricePerGram;
+    }
 }
