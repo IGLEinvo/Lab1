@@ -34,4 +34,14 @@ public class PreciousStone extends Stone {
     public float getFullPrice() {
         return getTotalPrice();
     }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + ", carat, clarity, pricePerCarat";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + ',' + carat + ',' + clarity + ',' + pricePerCarat;
+    }
 }

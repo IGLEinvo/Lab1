@@ -1,0 +1,7 @@
+name, color, weight, cost, carat, clarity, pricePerCarat
+sapphire,blue,0.5,1000.0,1.0,3.0,1000.0
+diamond,colorless,0.2,2000.0,2.0,4.0,2000.0
+peat,brown,1.0,10.0,fuel ores
+rock salt,colorless,100.0,1.0,not ores
+cystyn stone,orange,0.01,0.0,true
+uric stone,grey,0.1,0.0,false
